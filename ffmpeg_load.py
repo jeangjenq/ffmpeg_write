@@ -72,7 +72,10 @@ def ffmpeg_knobChanged():
         else:
             ffmpegPath = 'ffmpeg'
 
-        audioPath = '"%s"' % os.path.abspath(n['audio'].evaluate())
+        if n['audio'].value():
+            audioPath = '"%s"' % os.path.abspath(n['audio'].evaluate())
+        else:
+            audioPath = None
         inputPath = '"%s"' % os.path.abspath(input.value())
         outputPath = '"%s"' % os.path.abspath(outputPreview.value())
         startFrame = int(n['startFrame'].value())
@@ -114,7 +117,7 @@ def ffmpeg_execute():
     if isWindows():
         start = 'start cmd /k %s' % args
     else:
-        start = findTerminal() + " -e %s" % args
+        start = "%s -e %s" % (findTerminal(), args)
 
     if args:
         os.popen(start)
