@@ -8,15 +8,15 @@ and for the project I was working on I need to use ffmpeg to convert my output t
 So I created this tool that wrapped some ffmpeg command line together and able to launch ffmpeg quickly to do the job.
 Here are its main features in version 1.0
 
-*Grabs connected read node’s file paths automatically when connected (If the fields are empty)
-*Options to add prefix and suffix
-*Adding audio file in the output file
-*Adjustable fps, CRF settings
-*Gamma 2.2 or linear output
-*Output of .mov and .mp4
-*Output of H.264 or H.265
-*Custom FFmpeg path if it’s not set up in user’s environment variable
-*Preview output path and command to execute ffmpeg
-*Clear button to clear all the settings.
+* Grabs connected read node’s file paths automatically when connected (If the fields are empty)
+* Options to add prefix and suffix
+* Adding audio file in the output file
+* Adjustable fps, CRF settings
+* Gamma 2.2 or linear output
+* Output of .mov and .mp4
+* Output of H.264 or H.265
+* Custom FFmpeg path if it’s not set up in user’s environment variable
+* Preview output path and command to execute ffmpeg
+* Clear button to clear all the settings.
 
 ![usertab](http://www.nukepedia.com/images/users/jeangjenq/ffmpeg_ui.png) ![infotab](http://www.nukepedia.com/images/users/jeangjenq/ffmpeg_ui_info.png)
