@@ -20,7 +20,7 @@ NoOp {
  addUserKnob {4 codec -STARTLINE M {H.264 H.265 ""}}
  addUserKnob {22 clear l Clear -STARTLINE T "import ffmpeg_load; ffmpeg_load.ffmpeg_clear()"}
  addUserKnob {4 colorspace M {Gamma2.2 Linear ""}}
- addUserKnob {3 fps}
+ addUserKnob {7 fps R 6 60}
  fps 24
  addUserKnob {3 crf -STARTLINE}
  addUserKnob {2 audio l "audio file"}

@@ -85,7 +85,7 @@ def ffmpeg_knobChanged():
         args = '%s%s -apply_trc %s -framerate %s -start_number %s -i %s -c:v %s%s -crf %s -pix_fmt yuv420p %s' % (ffmpegPath,
                                                                                                                   '' if not n['audio'].value() is None else (' -i %s' % audioPath),
                                                                                                                   colorspace[int(n['colorspace'].getValue())],
-                                                                                                                  str(int(n['fps'].value())),
+                                                                                                                  str(n['fps'].value()),
                                                                                                                   str(startFrame),
                                                                                                                   inputPath,
                                                                                                                   codec[int(n['codec'].getValue())],
