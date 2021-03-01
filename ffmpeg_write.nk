@@ -1,7 +1,7 @@
 NoOp {
  inputs 0
  name ffmpeg_write
- onCreate "n = nuke.thisNode()\n#Set fps on create\nn\['fps'].setValue(nuke.root().fps())"
+ onCreate "n = nuke.thisNode()\n#Set fps on create\nn\['fps'].setValue(nuke.root()['fps'].value())"
  knobChanged "import ffmpeg_load; ffmpeg_load.ffmpeg_knobChanged()"
  tile_color 0xdfff00ff
  xpos -12742
