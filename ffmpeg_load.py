@@ -3,6 +3,7 @@ import nukescripts
 import os
 import re
 import platform
+import subprocess
 from distutils.spawn import find_executable
 
 # Check if platform is Windows
@@ -96,31 +97,11 @@ def ffmpeg_knobChanged():
         cmdPreview.setValue(args)
 
 def ffmpeg_execute():
-    def isNot_exec(name):
-        #check whether terminal program exists
-        return find_executable(name) is None
-
-    def findTerminal():
-        termList = ["x-terminal-emulator", "konsole", "gnome-terminal", "urxvt", "rxvt", "termit", "terminator", "Eterm", "aterm", "uxterm", "xterm", "roxterm", "xfce4-terminal", "termite", "lxterminal", "mate-terminal", "terminology", "st", "qterminal", "lilyterm", "tilix", "terminix", "kitty", "guake", "tilda", "alacritty", "hyper"]
-        #list taken from https://github.com/i3/i3/blob/next/i3-sensible-terminal
-        i = 0
-        for term in termList:
-            if isNot_exec(term):
-                i += 1
-            else:
-                break
-        return termList[i]
-
     n = nuke.thisNode()
     args = n['cmdPreview'].value()
 
-    if isWindows():
-        start = 'start cmd /k %s' % args
-    else:
-        start = "%s -e %s" % (findTerminal(), args)
-
     if args:
-        os.popen(start)
+        subprocess.Popen(args)
     else:
         nuke.message('Settings incomplete!')
 
